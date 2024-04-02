@@ -22,6 +22,12 @@
               </li>
             @endif
           @else
+
+          <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.projects.index') }}">Projects</a>
+          </li>
+
+
             <li class="nav-item dropdown">
               <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
                 href="#" id="navbarDropdown" role="button" v-pre>
