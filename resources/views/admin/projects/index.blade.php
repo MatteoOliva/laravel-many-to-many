@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="container">
+    <a href="{{route('admin.projects.create')}}" class="btn btn-primary my -4" > <i class="fa-solid fa-plus"></i>Nuovo post</a>
 <h1>Lista projects</h1>
 
 <table class="table">
@@ -10,7 +11,7 @@
 <tr>
     <th>titolo</th>
     <th>slug</th>
-    <th>content</th>
+    <th>estratto</th>
 </tr>
 </thead>
 <tbody>
@@ -19,7 +20,11 @@
 <tr>
     <td>{{$project->title}}</td>
     <td>{{$project->slug}}</td>
-    <td>{{$project->content}}</td>
+    <td>{{$project->getAbstract(50)}}</td>
+   
+    <td> <a href="{{route('admin.projects.show', $project)}}" class="btn btn-info" > <i class="fa-solid fa-eye"></i></a></td>
+    <td> <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-primary" > <i class="fa-solid fa-pencil"></i></a></td>
+    <td> <a href="{{route('admin.projects.destroy', $project)}}" class="btn btn-danger" > <i class="fa-solid fa-trash"></i></a></td>
     
 </tr>
 @empty
@@ -36,17 +41,14 @@
 
 </table>
 
-
+{{$projects->links('pagination::bootstrap-5')}}
 
 
 </div>
 
 
+@endsection
 
-
-
-
-
-
-
+@section('css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
