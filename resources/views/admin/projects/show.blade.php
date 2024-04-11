@@ -7,6 +7,7 @@
 <h1>vedi project</h1>
 
 <p><strong>{{$project['title']}}</strong></p>
+<p>{{$project->type->label}}</p>
 <p>{{$project['content']}}</p>
 
 </div>

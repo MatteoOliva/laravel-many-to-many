@@ -16,6 +16,22 @@
 </div>
 
 <div class="col-12">
+    <label class="form-label" for="type_id">Tipo</label>
+
+    <select class="form-select" name="type_id" id="type_id">
+        <option value="">Seleziona un tipo</option>
+
+        @foreach($types as $type)
+        <option value="{{$type->id}}">{{$type->label}}</option>
+        @endforeach
+    </select>
+    
+    @error('type_id')
+    <div class="invalid-feedback">{{$message}}</div>
+    @enderror
+</div>
+
+<div class="col-12">
     <label class="form-label" for="content">Contenuto</label>
     <textarea class="form-control" type="text" name="content" id="content" rows="5"></textarea>
 </div>
