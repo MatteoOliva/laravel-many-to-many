@@ -12,6 +12,10 @@ class Project extends Model
 
     protected $fillable = ['title', 'content'];
 
+    public function type() {
+        return $this->belongsTo(Type::class);
+    }
+
     public function getAbstract($n_chars = 30 ) {
         return (strlen($this->content) > $n_chars) ? subStr($this->content, 0, $n_chars) . '...' : $this->content;
     }
