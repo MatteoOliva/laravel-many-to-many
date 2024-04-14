@@ -11,6 +11,7 @@
 <tr>
     <th>titolo</th>
     <th>Tipo</th>
+    <th>tecnologie</th>
     <th>slug</th>
     <th>estratto</th>
 </tr>
@@ -21,6 +22,7 @@
 <tr>
     <td>{{$project->title}}</td>
     <td>{{$project->type->label}}</td>
+    <td>{{$project->getTagsToText()}}</td>
     <td>{{$project->slug}}</td>
     <td>{{$project->getAbstract(50)}}</td>
    

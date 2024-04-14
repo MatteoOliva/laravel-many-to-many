@@ -22,4 +22,8 @@ class Project extends Model
     public function getAbstract($n_chars = 30 ) {
         return (strlen($this->content) > $n_chars) ? subStr($this->content, 0, $n_chars) . '...' : $this->content;
     }
+    public function getTagsToText()
+    {
+        return implode(',', $this->technologies->pluck('label')->toArray());
+    }
 }
