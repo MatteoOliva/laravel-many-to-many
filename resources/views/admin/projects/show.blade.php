@@ -10,8 +10,6 @@
 <p>{{$project->type->label}}</p>
 <p>{{$project['content']}}</p>
 <p>{{$project->getTagsToText()}}</p>
-
-
 </div>
 </section>
 

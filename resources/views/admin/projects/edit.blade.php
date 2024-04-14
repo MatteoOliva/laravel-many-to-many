@@ -30,6 +30,14 @@
     <div class="invalid-feedback">{{$message}}</div>
     @enderror
 </div>
+<div class="col-12">
+    @foreach ($technologies as $technology)
+    <input class="form-check-input" type="checkbox" name="technologies" id="{{$technology->id}}" value="{{$technology->id}}">
+    <label class="form-check-label" for="{{$technology->id}}">{{$technology->label}}</label>
+    <br>
+    @endforeach
+    
+</div>
 
 <div class="col-12">
     <label class="form-label" for="content">Contenuto</label>

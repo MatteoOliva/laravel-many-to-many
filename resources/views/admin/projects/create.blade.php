@@ -30,6 +30,22 @@
     <div class="invalid-feedback">{{$message}}</div>
     @enderror
 </div>
+<div class="col-12">
+    <label class="form-label" for="type_id">Tecnologie</label>
+
+    <select class="form-select" name="type_id" id="type_id">
+        <option value="">Seleziona un tipo</option>
+
+        @foreach($technologies as $technology)
+        <option value="{{$technology->id}}">{{$technology->label}}</option>
+        @endforeach
+    </select>
+    
+    @error('type_id')
+    <div class="invalid-feedback">{{$message}}</div>
+    @enderror
+</div>
+
 
 <div class="col-12">
     <label class="form-label" for="content">Contenuto</label>
