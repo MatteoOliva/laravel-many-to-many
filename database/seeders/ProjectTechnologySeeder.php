@@ -16,7 +16,12 @@ class ProjectTechnologySeeder extends Seeder
      */
     public function run()
     {
-        $project = Project::find(1);
-        $project->technologies()->attach([2, 3, 5]);
+        $projects = Project::all();
+
+        foreach ($projects as $project) {
+            $project->technologies()->sync([1, 2, 3]);
+        }
+        
+        
     }
 }

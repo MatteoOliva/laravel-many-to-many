@@ -29,7 +29,6 @@ return new class extends Migration
         Schema::table('projects', function (Blueprint $table) {
             $table->dropForeign('projects_user_id_foreign');
             $table->dropColumn('type-id');
-
         });
     }
 };
