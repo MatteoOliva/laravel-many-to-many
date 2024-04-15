@@ -6,7 +6,7 @@
 
 <h1>Crea project</h1>
 
-<form action="{{route('admin.projects.store')}}" class="row g-3" method="POST">
+<form enctype="multipart/form-data" action="{{route('admin.projects.store')}}" class="row g-3" method="POST" >
 @csrf
 
 
@@ -44,6 +44,11 @@
     @error('type_id')
     <div class="invalid-feedback">{{$message}}</div>
     @enderror
+</div>
+
+<div class="col-12">
+    <label for="image" class="form-label">Immagine progetto</label>
+    <input type="file"  class="form-control" name="image" id="image">
 </div>
 
 

@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 
@@ -45,8 +46,10 @@ class ProjectController extends Controller
     {
         $data = $request->all();
         
+
+        Storage::put('uploads/projects', $data["image"]);  
+
         $project = new Project;
-        
         $project ->fill($data);
         $project->slug = Str::slug($project->title);
         $project->save();
