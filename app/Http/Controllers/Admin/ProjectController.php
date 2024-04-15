@@ -46,12 +46,13 @@ class ProjectController extends Controller
     {
         $data = $request->all();
         
-
-        Storage::put('uploads/projects', $data["image"]);  
-
         $project = new Project;
         $project ->fill($data);
         $project->slug = Str::slug($project->title);
+
+        $img_path = Storage::put('uploads/projects', $data["image"]);
+        $project->image = $img_path;
+        
         $project->save();
         if(array_key_exists('technologies', $data)) {
         $project->technologies()->attach($data["technologies"]);
