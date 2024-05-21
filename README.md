@@ -1,32 +1,31 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Esercizio di oggi: Laravel Boolfolio - Project Technology
+### nome repo: laravel-many-to-many
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Continuiamo a lavorare sul codice dei giorni scorsi, ma in una nuova repo e aggiungiamo una nuova entità Technology. Questa entità rappresenta le tecnologie utilizzate ed è in relazione many to many con i progetti.
+I task da svolgere sono diversi, ma alcuni di essi sono un ripasso di ciò che abbiamo fatto nelle lezioni dei giorni scorsi:
 
-## Init project
+* creare la migration per la tabella technologies;
+* creare il model Technology;
+* creare la migration per la tabella pivot project_technology;
+* aggiungere ai model Technology e Project i metodi per definire la relazione many to many;
+* visualizzare nella pagina di dettaglio di un progetto le tecnologie utilizzate, se presenti;
+* permettere all'utente di associare le tecnologie nella pagina di creazione e modifica di un progetto;
+* gestire il salvataggio dell'associazione progetto-tecnologie con opportune regole di validazione.
+## Bonus 1:
+creare il seeder per il model Technology.
 
-Per il frontend:
+## Bonus 2:
+aggiungere le operazioni CRUD per il model Technology, in modo da gestire le tecnologie utilizzate nei progetti direttamente dal pannello di amministrazione.
 
-```
-npm install
-npm run dev
-```
+# Esercizio di oggi: Laravel Boolfolio - Cover Image
+### nome repo: laravel-many-to-many
 
-Per il backend:
+Continuiamo a lavorare nella repo dei giorni scorsi e aggiungiamo un'immagine ai nostri progetti.
+Ricordiamoci di creare il symlink con l'apposito comando artisan e di aggiungere l'attributo enctype="multipart/form-data" ai form di creazione e di modifica!
 
-```
-composer install
-php artisan serve
-```
+## Bonus
+Inviare una email quando viene creato un nuovo post
 
-Poi copia il file `.env.example` in `.env` e configura la connessione al DB
+## Bonus 2
+Permettere l'eliminazione dell'immagine del post dal form di modifica
 
-## Create a controller
-
-...
-
-## Create a model
